@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // local storage acts like permanent storage for the browser, it can store large amount of data - eg : username, password, email, etc
+        // local storage is stored in the browser and is not sent to the server with every request.
+
+        localStorage.setItem("cart", [' apple', 'banana', 'orange']);
+        localStorage.setItem("Cart2", JSON.stringify([' apple', 'banana', 'orange'])); // we need to stringify the array before storing it in local storage
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        div {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #movieData {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Movie Display</h1>
+        <input type="text" placeholder="Enter Movie Name" id="movieName">
+        <button onclick="getMovieData(document.getElementById('movieName').value)">
+            Search Movie
+        </button>
+        <div id="movieData">
+            Details of the movie will be displayed here.
+        </div>
+
+    </div>
+    <script>
+        // Task - to get the movie data from the API and display it in the console
+
+        async function getMovieData(movieName) {
+            let url = `https://www.omdbapi.com/?t=${movieName}&apikey=d4c2eeb8`;
+
+            try{
+                // Logic
+                let response = await fetch(url)
+                let data = await response.json();
+                console.log(data);
+                const movieContainer = document.getElementById("movieData");
+                movieContainer.innerHTML = `<h2>${data.Title}</h2>
+                <p><strong>Year:</strong> ${data.Year}</p>  
+                <img src="${data.Poster}" alt="${data.Title} Poster" style="width:200px;">
+                <p><strong>Plot:</strong> ${data.Plot}</p>`;
+
+            }catch(error){
+                // Error Handling
+                console.log("Error", error);
+            }
+        }
+        getMovieData();
+
+        function add() {
+            console.log(2 + 20);
+        }
+    </script>
+</body>
+
+</html>

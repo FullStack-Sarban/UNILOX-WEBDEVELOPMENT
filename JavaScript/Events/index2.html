@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            overflow: auto;
+        }
+        .content {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Event Listner</h1>
+
+    <input id="myInput" placeholder="Start Typing...">
+    <div id="myDiv">
+        <div class="content">Scroll</div>
+    </div>
+    <script>
+        const input = document.getElementById("myInput");
+        const myDiv = document.getElementById("myDiv");
+
+        // Keyup Event
+        // input.addEventListener("keyup", function (e) {
+        //     console.log("Key Up Event Triggered: " + e.key);
+        // });
+
+
+        // // Keydown Event
+        // input.addEventListener("keydown", function (e) {
+        //     console.log("Key Down Event Triggered: " + e.key);
+        // });
+
+
+        // Change of value in the input tag
+        input.addEventListener("change", function (e) {
+            console.log("Change Event Triggered: " + e.target.value);
+        });
+
+
+        // Scroll Event
+        myDiv.addEventListener("scroll", function () {
+            console.log("Scroll Event Triggered");
+        });
+
+
+        // Mouseover Event
+        myDiv.addEventListener("mouseover", function () {
+            // console.log("Mouse Over Event Triggered");
+            myDiv.style.backgroundColor = "lightcoral";
+        });
+        
+        // Mouseout Event
+        myDiv.addEventListener("mouseout", function () {    
+            // console.log("Mouse Out Event Triggered");
+            myDiv.style.backgroundColor = "lightblue";
+        });
+    </script>
+</body>
+</html>

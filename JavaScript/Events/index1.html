@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myButton">Add To Cart</button>
+    <p id="msg"></p>
+    <script>
+        // Select the Element/Tag
+        const button = document.getElementById("myButton");
+        const msg = document.getElementById("msg");
+        
+        // Add Event Listener
+        button.addEventListener("click", function () {
+            msg.textContent = "Item added to cart!";
+        });
+    </script>
+</body>
+
+</html>
